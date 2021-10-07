@@ -1,37 +1,33 @@
 import React, { useState } from 'react';
+import SearchWeatherBar from '../components/SearchWeatherBar';
+import DisplayWeather from '../components/DisplayWeather';
+import { getWeatherByZipCode } from '../api/data/weatherData';
 
 function Initialize() {
-  const [domWriting, setDomWriting] = useState('Nothing Here!');
+  const [weather, setWeather] = useState({});
 
-  const handleClick = (e) => {
-    console.warn(`You clicked ${e.target.id}`);
-    setDomWriting(`You clicked ${e.target.id}! Check the Console!`);
+  const getWeatherByZip = () => {
+    getWeatherByZipCode().then((obj) => {
+      setWeather({
+        cityName: obj.name,
+        temp: obj.main.temp,
+        description: obj.weather[0].description,
+      });
+
+      console.warn(obj);
+    });
   };
 
   return (
-    <div className="App">
-      <h2>INSIDE APP COMPONENT</h2>
-      <div>
-        <button
-          type="button"
-          id="this-button"
-          className="btn btn-info"
-          onClick={handleClick}
-        >
-          I am THIS button
-        </button>
-      </div>
-      <div>
-        <button
-          type="button"
-          id="that-button"
-          className="btn btn-primary mt-3"
-          onClick={handleClick}
-        >
-          I am THAT button
-        </button>
-      </div>
-      <h3>{domWriting}</h3>
+    <div>
+      <SearchWeatherBar />
+      <DisplayWeather />
+      <h1>{weather.cityName}</h1>
+      <h2>{weather.temp}</h2>
+      <h3>{weather.description}</h3>
+      <button onClick={getWeatherByZip} type="button">
+        Test
+      </button>
     </div>
   );
 }

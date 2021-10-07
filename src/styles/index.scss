@@ -4,3 +4,44 @@
 body {
   background-color: $favColor !important;
 }
+
+.submit-btn {
+  width: 550px;
+  height: 65px;
+  left: 445px;
+  top: 764px;
+  background: #00B5C0;
+  border-radius: 20px;
+}
+
+.submit-weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 628px;
+  height: 301px;
+  left: 406px;
+  top: 569px;
+  background: #E6C4C4;
+  border-radius: 20px;
+}
+
+.input-field {
+  width: 550px;
+  height: 65px;
+  left: 445px;
+  top: 676px;
+  background: #FFFFFF;
+}
+
+.weather-box {
+  height: 300px;
+  width: 300px;
+  background-color: lightgray;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
