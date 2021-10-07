@@ -1,9 +1,12 @@
 import axios from 'axios';
+import { openWeatherApiKey } from '../apiKeys';
 
-const endpoint = 'https://api.openweathermap.org/data/2.5/weather?zip=38804&appid=13253bfe55f4e3ae6e77a558891d513d';
+const endpoint = 'https://api.openweathermap.org/data/2.5/weather?';
+
+const appId = openWeatherApiKey;
 
 const getWeatherByZipCode = async () => {
-  const zipCall = await axios.get(endpoint);
+  const zipCall = await axios.get(`${endpoint}zip=38804&appid=${appId}`);
   return zipCall.data;
 };
 
