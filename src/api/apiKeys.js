@@ -9,8 +9,6 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-const openWeatherApiKey = {
-  apiKey: process.env.OPEN_WEATHER_API_KEY,
-};
+const openWeatherApiKey = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
 
 export { firebaseConfig, openWeatherApiKey };

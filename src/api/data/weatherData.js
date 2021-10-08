@@ -13,9 +13,9 @@ const getWeatherByZipCode = async () => {
 // NEEDS USER ID AND THE WHOLE GETTING THE RIGHT LOCATION BY ID BY WHAT THEY SEARCH TO ADD
 // ALSO ENDPOINT IS WRONG - NEEDS TO BE FIREBASE
 // GOING TO BE USING THIS TO HAVE THEIR LOCATION BE SAVED/POSTED TO FIREBASE BY UID
-const addLocationToUser = async () => {
-  const userAddedLocation = await axios.post(endpoint);
-  return userAddedLocation.data;
-};
+// const addLocationToUser = async () => {
+//   const userAddedLocation = await axios.post(endpoint);
+//   return userAddedLocation.data;
+// };
 
-export { getWeatherByZipCode, addLocationToUser };
+export default getWeatherByZipCode;
